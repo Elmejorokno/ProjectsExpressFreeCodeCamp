@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/v1/tasks', require('./routes/tasks'))
 app.use('*', require('./middlewares/notFound')) //404 page
-app.use(errorHandler)
+app.use(errorHandler) //middleware if occurs an http error.
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {
